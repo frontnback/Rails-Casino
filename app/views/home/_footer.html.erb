@@ -1,0 +1,31 @@
+<div class="footer-wrap">
+  <div class="button-area-left">
+      <%= link_to home_hit_path, remote:true, id: 'hit', method: :get do %>
+        <button>Hit</button>
+      <% end %>
+      <%= link_to home_stay_path, remote:true, id: 'stay', method: :get do %>
+        <button>Stay</button>
+      <% end %>
+      <div class="play-again">
+        <%= link_to home_index_path, remote: true, method: :get do %>
+          <button>Play Again</button>
+        <% end %>
+      </div>
+      <p id="wager">Current Wager: <span id="current-wager"><%= $wager %></span></p>
+  </div>
+  <div class="wager-buttons">
+    <%= button_to "1", home_wager_path, name: 'wager', value: 1, remote: true %>
+    <%= button_to "5", home_wager_path, name: 'wager', value: 5, remote: true %>
+    <%= button_to "20", home_wager_path, name: 'wager', value: 20, remote: true %>
+    <%= button_to "50", home_wager_path, name: 'wager', value: 50, remote: true %>
+    <%= button_to "100", home_wager_path, name: 'wager', value: 100, remote: true %>
+    <%= button_to "250", home_wager_path, name: 'wager', value: 250, remote: true %>
+    <%= button_to "500", home_wager_path, name: 'wager', value: 500, remote: true %>
+    <%= button_to "1000", home_wager_path, name: 'wager', value: 1000, remote: true %>
+  </div>
+  <div class="result">
+    <h2 id="message">
+      <span id="flash-msg"><%= flash[:success] %></span>
+    </h2>
+  </div>
+</div>

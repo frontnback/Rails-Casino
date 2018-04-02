@@ -1,0 +1,29 @@
+<header>
+  <h1>Play Blackjack Now!</h1>
+</header>
+
+<div class="register-wrap">
+  <p>Register below to begin playing now.</p>
+  <p>We will track your game performance and add you to our leaderboard if you make the cut.</p>
+  <div class='signup-form'>
+    <%= form_for(@user, url: register_path) do |f| %>
+      <%= f.label :username, id: 'form-username' %>
+      <%= f.text_field :username %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :password, 'Password (minimum 6 characters)'%>
+      <%= f.password_field :password, id: 'password1' %>
+
+      <%= f.label :password_confirmation, 'Confirm Password', id: 'confirm-label' %>
+      <%= f.password_field :password_confirmation, id: 'password2' %>
+
+      <%= f.submit 'Complete Registration', class: 'btn' %>
+    <% end %>
+  </div>
+
+  <div id="error_messages">
+    <%= render 'shared/error_messages' %>
+  </div>
+</div>

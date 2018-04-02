@@ -1,0 +1,12 @@
+<div class="leaderboard">
+  <table>
+  <tr>
+    <th>Rank</th>
+    <th>Username</th>
+    <th>Balance</th>
+  </tr>
+    <% @users.each_with_index do |user, idx| %>
+      <tr><td><%= idx + 1 %><td><%= user.username %></td><td><%= user.balance %></td></tr>
+    <% end %>
+  </table>
+</div>

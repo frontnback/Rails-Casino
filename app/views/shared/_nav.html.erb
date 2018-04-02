@@ -1,0 +1,32 @@
+<nav>
+  <div class="nav-buttons">
+    <% if logged_in? %>
+      <%= link_to root_path, remote: true, method: :get do %>
+        <button>My Account</button>
+      <% end %>
+    <% else %>
+      <%= link_to login_path, remote:true, id: 'login', method: :get do %>
+        <button>Sign In</button>
+      <% end %>
+    <% end %>
+    <% if logged_in? %>
+      <%= link_to logout_path, remote:true, id: 'logout', method: :delete do %>
+        <button>Logout</button>
+      <% end %>
+    <% else %>
+       <%= link_to register_path, remote:true, id: 'register', method: :get do %>
+        <button>Register</button>
+      <% end %>
+    <% end %>
+    <% if @current %>
+      <%= link_to root_path, remote: true, method: :get do %>
+        <button>Back To Game</button>
+      <% end %>
+    <% else %>
+      <%= link_to users_leaderboard_path, remote: true, method: :get do %>
+        <button>Leaderboard</button>
+      <% end %>
+    <% end %>
+  </div>
+  <%= render 'shared/logged-in' %>
+</nav>

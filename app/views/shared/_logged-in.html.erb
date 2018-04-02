@@ -1,0 +1,8 @@
+<ul>
+  <% if logged_in? %>
+    <li>Logged in as: <span id="current_user"><%= current_user.username %></span></li>
+    <li>Current balance: <span id="balance"><%= current_user.balance %></span></li>
+  <% end %>
+    <li><%= Time.now.strftime("%m/%d/%Y %I:%M%p") %></li>
+</ul>
+

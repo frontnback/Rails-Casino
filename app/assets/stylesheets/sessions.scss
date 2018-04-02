@@ -1,0 +1,36 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.login {
+  font-size: 1.4rem;
+  text-align: center;
+  display: none;
+  width: 350px;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  border: 1px solid black;
+}
+
+.login input {
+  font-size: 1.6rem;
+  width: 12rem;
+}
+
+.login label {
+  padding-bottom: 2rem;
+}
+
+#captcha {
+  padding-top: 2rem;
+  margin-left: 35px;
+}
+
+.login input[type="submit"] {
+  width: 6rem;
+}

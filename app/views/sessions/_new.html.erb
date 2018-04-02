@@ -1,0 +1,22 @@
+<div class="login">
+  <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.label :username %>
+        <br>
+        <%= f.text_field :username, class: 'form-control' %>
+        <br>
+        <%= f.label :password %>
+        <br>
+        <%= f.password_field :password, class: 'form-control' %>
+        <div id="captcha">
+          <%= recaptcha_tags %>
+        </div>
+        <br>
+        <%= f.submit "Log in", class: "btn btn-primary" %>
+        <br>
+        <p>New user? <%= link_to "Sign up now!", register_path %></p>
+  <% end %>
+</div>
+
+<div class="login-flash">
+  <%= flash[:danger] %>
+</div>

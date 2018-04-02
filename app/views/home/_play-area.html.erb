@@ -1,0 +1,22 @@
+<div class="body-wrap">
+  <div class="username">
+    <h2>Your Hand</h2>
+  </div>
+  <div class="play-area">
+    <div class="player">
+      <%= render 'player-hand' %>
+    </div>
+  </div>
+  <div class="username">
+    <h2>Dealer Hand</h2>
+  </div>
+  <div class="play-area">
+    <div class="player">
+      <div class="dealer-hand">
+        <%= image_tag @dealer_hand.first.avatar_file_name %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'footer' %>
