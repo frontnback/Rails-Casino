@@ -64,10 +64,4 @@ Rails.application.configure do
   :authentication => :plain,
   :enable_starttls_auto => true
 }
-
-
-  # ENV['GMAIL_USERNAME'] = 'edmlounge@gmail.com'
-  # ENV['GMAIL_PASSWORD'] = 'Ef071293!'
-  # ENV['RECAPTCHA_SITE_KEY'] = '6Ld3OlAUAAAAAP5Vk0pQkDMsux64CkysVfP9RtQS'
-  # ENV['RECAPTCHA_SECRET_KEY'] = '6Ld3OlAUAAAAAP2yWHkn9UlLUonH-LS6PwAvXUFU'
 end
