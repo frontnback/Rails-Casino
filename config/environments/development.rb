@@ -1,6 +1,8 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.action_controller.default_url_options = {
+  host: ENV['HTTP_HOST'] || 'localhost'
+}
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
@@ -27,6 +29,7 @@ Rails.application.configure do
   end
 
   # Don't care if the mailer can't send.
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
@@ -52,6 +55,8 @@ Rails.application.configure do
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
+  ENV['GMAIL_USERNAME'] = 'edmlounge@gmail.com'
+  ENV['GMAIL_PASSWORD'] = 'Ef071293!'
   ENV['RECAPTCHA_SITE_KEY'] = '6Ld3OlAUAAAAAP5Vk0pQkDMsux64CkysVfP9RtQS'
   ENV['RECAPTCHA_SECRET_KEY'] = '6Ld3OlAUAAAAAP2yWHkn9UlLUonH-LS6PwAvXUFU'
 end

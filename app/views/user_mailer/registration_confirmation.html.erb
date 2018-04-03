@@ -1,0 +1,5 @@
+Hi <%= @user.username %>
+
+Thanks for registering for our Blackjack App! 
+
+<%= link_to 'Confirm Here.',confirm_email_user_url(@user.confirm_token, host: '127.0.0.1:3000') %>

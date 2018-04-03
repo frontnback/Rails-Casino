@@ -10,7 +10,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user 
+      UserMailer.registration_confirmation(@user).deliver
+      # log_in @user 
       flash[:success] = "Thanks for registering, #{@user.username}!"
       redirect_to root_path
     else
@@ -23,10 +24,21 @@ class UsersController < ApplicationController
     @current = true
   end
 
-  private 
+  def confirm_email
+    @user = User.find_by_confirm_token(params[:id])
+    if @user
+      @user.validate_email
+      flash[:success] = 'Success!'
+      redirect_to root_path
+    else
+      flash[:error] = 'Sorry, user does not exist'
+    end
+  end
 
+  private 
     def user_params
       params.require(:user).permit(:username, :email, :password,
                                    :password_confirmation)
     end
 end
+
