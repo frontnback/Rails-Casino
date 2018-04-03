@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      UserMailer.registration_confirmation(@user).deliver
+      UserMailer.registration_confirmation(@user).deliver_now
       # log_in @user 
       flash[:success] = "Thanks for registering, #{@user.username}!"
       redirect_to root_path
