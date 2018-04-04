@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'home/index' => 'home#index'
   get '/login' => 'sessions#new'
   get '/users/leaderboard' => 'users#leaderboard'
+  get '/poker' => 'poker#index'
 
   post '/register' => 'users#create'
   post '/login' => 'sessions#create'

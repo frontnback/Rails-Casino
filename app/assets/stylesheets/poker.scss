@@ -1,0 +1,74 @@
+// Place all the styles related to the Poker controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.poker-table {
+}
+
+.poker-hand {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 13rem;
+}
+
+.flop {
+  position: absolute;
+  left: 38%;
+  top: 27rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  /*transform: translate(-50%, 50%);*/
+}
+
+.poker-hand img,
+.flop img {
+  height: 8rem;
+}
+
+.poker-hand:nth-child(9) {
+  position: absolute;
+  left: 10%;
+  top: 20rem;
+}
+
+.poker-hand:nth-child(2) {
+  position: absolute;
+  top: 8rem;
+  left: 30%;
+}
+
+.poker-hand:nth-child(3) {
+  position: absolute;
+  top: 8rem;
+  left: 60%;
+}
+
+.poker-hand:nth-child(4) {
+  position: absolute;
+  top: 20rem;
+  left: 80%;
+}
+
+.poker-hand:nth-child(5) {
+  position: absolute;
+  bottom: 20rem;
+  left: 10%;
+}
+
+.poker-hand:nth-child(6) {
+  position: absolute;
+  bottom: 8rem;
+  left: 30%;
+}
+
+.poker-hand:nth-child(7) {
+  position: absolute;
+  bottom: 8rem;
+  left: 60%;
+}
+
+.poker-hand:nth-child(8) {
+  position: absolute;
+  bottom: 20rem;
+  left: 80%;
+}
