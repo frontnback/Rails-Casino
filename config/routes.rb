@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/index'
+
   get 'friends/index'
 
   get 'friends/destroy'
@@ -13,6 +15,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   get '/users/leaderboard' => 'users#leaderboard'
   get '/poker' => 'poker#index'
+  get '/search' => 'search#index'
 
   post '/register' => 'users#create'
   post '/login' => 'sessions#create'

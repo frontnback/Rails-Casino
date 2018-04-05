@@ -18,6 +18,7 @@
         <button>Register</button>
       <% end %>
     <% end %>
+
     <% if @current %>
       <%= link_to root_path, remote: true, method: :get do %>
         <button>Back To Game</button>
@@ -28,5 +29,12 @@
       <% end %>
     <% end %>
   </div>
+
+  <%= form_tag(search_path, :method => "get", id: "search-form", remote:true) do %>
+      <%= text_field_tag :username, params[:username], placeholder: "Find Your Friend By Username", :id => "search-field" %>
+    <div class="search-results">
+    </div>
+    <% end %>
+
   <%= render 'shared/logged-in' %>
 </nav>

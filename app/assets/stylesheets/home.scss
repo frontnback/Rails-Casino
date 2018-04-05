@@ -23,8 +23,8 @@ nav {
   position: absolute;
   display: grid;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20%;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 10%;
 }
 
 nav button {
@@ -33,13 +33,14 @@ nav button {
 
 .nav-buttons {
   display: grid;
+  height: 3rem;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
 }
 
 nav ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 30rem 1fr;
   list-style: none;
   width: 100%;
   text-align: center;
@@ -52,6 +53,29 @@ nav li {
 
 nav li:last-child {
   margin-right: 1rem;
+}
+
+#search-field {
+  height: 3rem;
+  width: 30rem;
+  padding: 0;
+  border: none;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.search-results {
+  display: none;
+  z-index: 9999;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 60rem;
+  width: 30rem;
+  text-align: center;
+}
+
+.search-results button {
+  width: 20%;
+  margin: 0 auto;
 }
 
 .username {

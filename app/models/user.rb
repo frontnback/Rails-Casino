@@ -8,8 +8,13 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }, on: :create
   has_secure_password
-  has_many :messages
   validates :password, presence: true, length: { minimum: 6 }, on: :create
+  has_many :messages
+  has_and_belongs_to_many :friendships,
+    class_name: 'User',
+    join_table: :friendships,
+    foreign_key: :user_id,
+    association_foreign_key: :friend_user_id
 
   def User.digest(string)
     cost = ActiveRecord::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

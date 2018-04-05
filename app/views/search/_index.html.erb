@@ -1,0 +1,7 @@
+<% @users.each do |user| %>
+  <div class="user-search-result">
+    <div class="search-username">
+      <%= user.username %> <span id="search-user-balance"><%= user.balance %></span>
+    </div>
+  <button id="add-friend">Add Me!</button>
+<% end %>
