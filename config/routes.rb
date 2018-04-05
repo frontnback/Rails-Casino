@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'friends/index'
+
+  get 'friends/destroy'
+
+  resources :friend_requests
   root 'home#index'
 
   get '/register' => 'users#new'
@@ -15,6 +20,9 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
+  mount ActionCable.server, at: '/cable'
+
+  resources :messages
   resources :users do
     member do
       get :confirm_email

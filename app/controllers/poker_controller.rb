@@ -1,12 +1,16 @@
 class PokerController < ApplicationController
   respond_to :html, :js
+  before_action :get_messages
 
   def index
     $indices = []
     $game = Game.new
   end
-    
-  private
+
+  def get_messages 
+    @messages = Message.for_display 
+    @message = current_user.messages.build 
+end
 end
 
 class Player

@@ -8,6 +8,7 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }, on: :create
   has_secure_password
+  has_many :messages
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
   def User.digest(string)
@@ -21,11 +22,10 @@ class User < ApplicationRecord
   end 
 
   def validate_email
-      self.email_confirmed = true
-      self.confirm_token = nil
-      save!(validate: false)
-    end
-
+    self.email_confirmed = true
+    self.confirm_token = nil
+    save!(validate: false)
+  end
 
   private
 

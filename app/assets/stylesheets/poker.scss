@@ -7,68 +7,76 @@
 
 .poker-hand {
   display: grid;
+  grid-gap: 0.3rem;
   grid-template-columns: 50% 50%;
-  width: 13rem;
+  width: 11rem;
 }
 
 .flop {
   position: absolute;
-  left: 38%;
-  top: 27rem;
+  left: 50%;
+  top: 30rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /*transform: translate(-50%, 50%);*/
 }
 
 .poker-hand img,
 .flop img {
+box-shadow: 6px 6px 4px black;
   height: 8rem;
+  moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none; /* From IE10 only */
+    user-select: none; /* Not valid CSS yet, as of July 2012 */
+
+    -webkit-user-drag: none; /* Prevents dragging of images/divs etc */
+    user-drag: none;
 }
 
 .poker-hand:nth-child(9) {
   position: absolute;
-  left: 10%;
+  left: 25%;
   top: 20rem;
 }
 
 .poker-hand:nth-child(2) {
   position: absolute;
   top: 8rem;
-  left: 30%;
+  left: 45%;
 }
 
 .poker-hand:nth-child(3) {
   position: absolute;
   top: 8rem;
-  left: 60%;
+  left: 65%;
 }
 
 .poker-hand:nth-child(4) {
   position: absolute;
   top: 20rem;
-  left: 80%;
+  left: 85%;
 }
 
 .poker-hand:nth-child(5) {
   position: absolute;
   bottom: 20rem;
-  left: 10%;
+  left: 25%;
 }
 
 .poker-hand:nth-child(6) {
   position: absolute;
   bottom: 8rem;
-  left: 30%;
+  left: 45%;
 }
 
 .poker-hand:nth-child(7) {
   position: absolute;
   bottom: 8rem;
-  left: 60%;
+  left: 65%;
 }
 
 .poker-hand:nth-child(8) {
   position: absolute;
   bottom: 20rem;
-  left: 80%;
+  left: 85%;
 }
