@@ -17,6 +17,40 @@ body {
   background: black;
 }
 
+.chat-area {
+  display: none;
+  position: absolute;
+  background: rgba(255, 0, 0, 0.3);
+  margin-left: 6rem;
+  margin-top: -4.8rem;
+  height: 50rem;
+  width: 30rem;
+  z-index: 9999;
+}
+
+.incoming-friend-request{
+  display: none;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  width: 16rem;
+  height: 4.7rem;
+  background:rgba(255, 0, 0, 0.8);
+  margin-left: 5.5rem;
+  margin-top: -4.9rem;
+  z-index: 9999;
+  border-radius: 0.3rem;
+}
+
+#friend-request-user {
+  font-weight: 600;
+  color: black;
+}
+
+.mytext {
+  width: 100%;
+}
+
 #spade, #twenty-one {
   color: white;
   text-align: center;
@@ -39,6 +73,9 @@ body {
 }
 
 #search-field {
+  position: absolute;
+  left: 6rem;
+  margin-top: -5rem;
   color: black;
   height: 3rem;
   width: 20rem;
@@ -57,6 +94,9 @@ body {
   color: white;
   display: none;
   z-index: 9999;
+  position: absolute;
+  left: 6rem;
+  top: 4rem;
   background-color: rgba(0, 0, 0, 0.7);
   height: auto;
   width: 20rem;
@@ -89,7 +129,7 @@ body {
 .body-wrap {
   background-color: black;
   width: 100%;
-  left: 5.3rem;
+  left: 5.5rem;
   position: absolute;
   top: 4rem;
   border-radius: 0.5rem;

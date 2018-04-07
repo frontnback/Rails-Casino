@@ -11,26 +11,25 @@
 }
 
 .navbar-inverse {
-   background: none !important;
+   background: linear-gradient(80deg, red, maroon 70%) !important;
 }
 
 .navbar {
-  background: lightred !important;
-  border-right: 2rem solid black;
-  box-shadow: 3px 3px 3px black;
+  border-right: 4rem solid black;
+  box-shadow: 0px 0px 6px black;
 }
 
 .navbar li {
  margin-top: 0.2rem;
- background-color: rgba(212,180,55, 0.9);
+ background: linear-gradient(20deg, rgb(255,200,55), orange);
 
- border-top: 1px solid white;
- border-bottom: 1px solid white;
+ border-top: 1px solid black;
+ border-bottom: 1px solid black;
  border-radius: 0.2rem;
 }
 
 .navbar li:hover {
-  background-color: lightgrey;
+  background: darkgrey;
 }
 
 svg {
@@ -47,6 +46,10 @@ svg {
 #search-field {
   width: 20rem;
   height: 4rem;
+}
+
+#btc {
+  margin-left: 0.45rem;
 }
 
 a i {

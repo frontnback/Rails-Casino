@@ -40,13 +40,16 @@
             <span class="full-nav">Blackjack</span>
           </a>
         </li>
-        <li>
+        <li id="friends">
           <a href="#my-friends">
             <span class="small-nav" data-toggle="tooltip" data-placement="right" title="My Friends"> 
               <i class="fas fa-users"></i>
             </span>
             <span class="full-nav">My Friends</span>
           </a>
+          <div class="incoming-friend-request">
+            <span id="friend-request-user"></span> sent you a friend request!
+          </div>
         </li>
         <li>
           <a href="#private-chat">
@@ -55,6 +58,9 @@
             </span>
             <span class="full-nav">Private Chat</span>
           </a>
+          <div class="chat-area">
+            <input class="mytext" placeholder="Type a message"/>
+          </div>       
         </li>
         <li id ="mag-glass">
           <a href="#search">
