@@ -4,6 +4,5 @@ class RoomChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    current_user.update!(online: false)
   end
 end

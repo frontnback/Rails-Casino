@@ -1,4 +1,4 @@
-App.appearance = App.cable.subscriptions.create("AppearanceChannel", {
+App.notifications = App.cable.subscriptions.create("NotificationsChannel", {
   connected: function() {
     // Called when the subscription is ready for use on the server
   },
@@ -8,6 +8,6 @@ App.appearance = App.cable.subscriptions.create("AppearanceChannel", {
   },
 
   received: function(data) {
-    // Called when there's incoming data on the websocket for this channel
+    alert(`${data.content} has sent you a friend request!`);
   }
 });

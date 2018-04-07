@@ -54,7 +54,7 @@ class User < ApplicationRecord
     self.update_attributes(online:true)
   end
 
-  def is_offiline
+  def is_offline
     self.update_attributes(online:false)
   end
 end

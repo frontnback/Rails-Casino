@@ -4,11 +4,11 @@ class FriendRequestsController < ApplicationController
   def create
     requestee = User.find(params[:friend_id].to_i)
     @friend_request = FriendRequest.new(sender_id: current_user.id, requested_id: requestee.id)
-    byebug
     if @friend_request.save
-      render :show, status: :created, location: @friend_request
-    else
-      render json: @friend_request.errors, status: :unprocessable_entity
+      ActionCable.server.broadcast "notifications_channel_#{requestee.id}",
+                                    content: current_user.username
+      # ActionCable.server.broadcast "notifications_channel_#{requestee.id}",
+      #   message: "#{requestee.username} has sent you a friend request!"
     end
   end
 
