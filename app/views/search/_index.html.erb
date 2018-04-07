@@ -11,7 +11,7 @@
     </div>
 
   <div id="add-friend">
-    <%= link_to friends_request_path, remote: true, method: :post do %>
+    <%= link_to friend_requests_path(friend_id: user.id), remote:true, method: :post do %>
       <button>Add Me!</button>
     <% end %>
   </div>

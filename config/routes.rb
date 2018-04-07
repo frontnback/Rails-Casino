@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'search/index'
 
-  resources :friend_requests
   root 'home#index'
 
   get '/register' => 'users#new'
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
 
   delete '/logout' => 'sessions#destroy'
 
+  resources :friend_requests
   resources :messages
   resources :users do
     member do
