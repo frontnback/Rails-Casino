@@ -5,10 +5,13 @@ $( document ).on('turbolinks:load', function() {
   $('body').fadeIn(2000);
   $('#flash-msg').fadeIn(3000);
   $('#flash-msg').fadeOut(8000);
+  $('#search-field').attr('autocomplete', 'off');
   $('#search-field').on('input', function() {
-    Rails.fire(this.form, 'submit');
+    if ($('#search-field').val() !== '') {
+      Rails.fire(this.form, 'submit');
+    } else if ($('#search-field').val() == '') {
+      $('.search-results').empty();
+      $('.search-results').css('display', 'none');
+    }
   });
-  // $('#search-form').on('submit', function(e) {
-  //   e.preventDefault();
-  // });
 });

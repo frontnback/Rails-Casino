@@ -1,0 +1,4 @@
+<% @friendships.each do |friend| %>
+
+  <%= User.find_by(id: friend.friend_user_id).username %>
+<% end %>

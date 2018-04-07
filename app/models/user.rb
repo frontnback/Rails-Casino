@@ -1,6 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
   before_create { email.downcase! }
-  before_create :confirmation_token
   before_create :set_initial_balance
   validates :username, presence: true, length: { maximum: 15 }, on: :create
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
@@ -17,9 +17,22 @@ class User < ApplicationRecord
     association_foreign_key: :friend_user_id
 
   def User.digest(string)
-    cost = ActiveRecord::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
-                                                   BCrypt::Engine.cost
+    cost = ActiveModel::SecurePassword.min_cost ? Bcrypt::Engine::MIN_COST : BCrypt::Engine.cost 
     BCrypt::Password.create(string, cost: cost)
+  end
+
+  def User.new_token
+    SecureRandom.urlsafe_base64
+  end
+
+  def remember
+    self.remember_token = User.new_token 
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
   end
 
   def set_initial_balance
@@ -32,11 +45,15 @@ class User < ApplicationRecord
     save!(validate: false)
   end
 
-  private
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 
-    def confirmation_token 
-      if self.confirm_token.blank?
-        self.confirm_token = SecureRandom.urlsafe_base64.to_s
-      end
-    end
+  def is_online
+    self.update_attributes(online:true)
+  end
+
+  def is_offiline
+    self.update_attributes(online:false)
+  end
 end

@@ -28,13 +28,24 @@
         <button>Leaderboard</button>
       <% end %>
     <% end %>
+
+    <% if logged_in? %>
+      <div class="my-friends">
+        <%= link_to friends_path, remote: true, method: :get do %>
+            <button>My Friends</button>
+          <% end %>
+        <div class="friend-search-results">
+        </div>
+      </div>
+    <% end %>
   </div>
 
   <%= form_tag(search_path, :method => "get", id: "search-form", remote:true) do %>
-      <%= text_field_tag :username, params[:username], placeholder: "Find Your Friend By Username", :id => "search-field" %>
+      <%= text_field_tag :username, params[:username], placeholder: "Find A User", :id => "search-field" %>
     <div class="search-results">
     </div>
-    <% end %>
+  <% end %>
+ 
 
   <%= render 'shared/logged-in' %>
 </nav>

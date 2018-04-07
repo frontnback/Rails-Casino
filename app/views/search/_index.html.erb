@@ -1,8 +1,18 @@
 <% @users.each do |user| %>
   <div class="user-search-result">
     <div class="search-result">
-      <span id="search-username"><%= user.username %> <span id="search-user-balance"><%= user.balance %></span>
+      <% if user.online? %>
+        <span id="search-username user-online">
+          <%= user.username %> is online now!</span>
+      <% else %>
+        <span id="search-username">
+          <%= user.username %></span>
+      <% end %>
     </div>
-  <button id="add-friend">Add Me!</button>
+
+  <div id="add-friend">
+    <%= link_to friends_request_path, remote: true, method: :post do %>
+      <button>Add Me!</button>
+    <% end %>
   </div>
 <% end %>

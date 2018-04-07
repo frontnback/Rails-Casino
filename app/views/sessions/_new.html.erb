@@ -7,6 +7,13 @@
         <%= f.label :password %>
         <br>
         <%= f.password_field :password, class: 'form-control' %>
+        <div id="remember-me">
+            <%= f.label :remember_me, class: 'checkbox' do %>
+              <%= f.check_box :remember_me %>
+              <span>Remember me on this computer</span>
+            <% end %>
+        </div>
+
         <div id="captcha">
          
         </div>

@@ -1,0 +1,14 @@
+<% @online_users.each do |user| %>
+  <div>
+    <%= user.email %> - 
+    <span class="online-user" data-user-id="<%= user.id %>">
+       <%= user.online? ? 'online' : 'offline' %>
+    </span>
+  </div>
+<% end %>
+
+<div>
+  <span id='online-user-count'>
+    <%= @online_user_count  %>
+  </span> users currently online
+</div>

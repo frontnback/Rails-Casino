@@ -4,7 +4,6 @@ html {
   background: lightgrey;
   color: black;
   font-family: Helvetica;
-  
 }
 
 h1 {
@@ -24,7 +23,6 @@ nav {
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 10%;
 }
 
 nav button {
@@ -35,14 +33,26 @@ nav button {
   display: grid;
   height: 3rem;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.friend-search-results {
+  color: white;
+  display: none;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.7);
+  height: auto;
+  width: auto;
+  text-align: center;
+  border-radius: 0 0 0.5rem 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 nav ul {
   display: grid;
-  grid-template-columns: 1fr 30rem 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   list-style: none;
-  width: 100%;
+  width: 80%;
   text-align: center;
 }
 
@@ -57,7 +67,7 @@ nav li:last-child {
 
 #search-field {
   height: 3rem;
-  width: 30rem;
+  width: 20rem;
   padding: 0;
   border: none;
   font-size: 1.2rem;
@@ -73,16 +83,16 @@ nav li:last-child {
   color: white;
   display: none;
   z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   height: auto;
-  width: 30rem;
+  width: 20rem;
   text-align: center;
   border-radius: 0 0 0.5rem 0.5rem;
   padding-bottom: 0.5rem;
 }
 
 .search-results button {
-  width: 20%;
+  width: auto;
   margin: 0 auto;
 }
 
