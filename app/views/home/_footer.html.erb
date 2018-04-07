@@ -11,7 +11,6 @@
           <button>Play Again</button>
         <% end %>
       </div>
-      <p id="wager">Current Wager: <span id="current-wager"><%= $wager %></span></p>
   </div>
   <div class="wager-buttons">
     <%= button_to "1", home_wager_path, name: 'wager', value: 1, remote: true %>
@@ -24,6 +23,7 @@
     <%= button_to "1000", home_wager_path, name: 'wager', value: 1000, remote: true %>
   </div>
   <div class="result">
+    <p id="wager">Current Wager: <span id="current-wager"><%= $wager %></span></p>
     <h2 id="message">
       <span id="flash-msg"><%= flash[:success] %></span>
     </h2>

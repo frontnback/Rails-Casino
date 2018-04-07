@@ -1,0 +1,186 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css);
+
+.navbar-twitch {
+  background-color: c6ffc6;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 5.3rem;
+  height: 100vh;
+  z-index: 1030;
+}
+
+.navbar-inverse {
+   background: none !important;
+}
+
+.navbar {
+  background: lightred !important;
+  border-right: 2rem solid black;
+  box-shadow: 3px 3px 3px black;
+}
+
+.navbar li {
+ margin-top: 0.2rem;
+ background-color: rgba(212,180,55, 0.9);
+
+ border-top: 1px solid white;
+ border-bottom: 1px solid white;
+ border-radius: 0.2rem;
+}
+
+.navbar li:hover {
+  background-color: lightgrey;
+}
+
+svg {
+  margin: 0 auto;
+  color: white;
+  width: 2rem;
+}
+
+.user-search {
+  display: none;
+  left: 0;
+}
+
+#search-field {
+  width: 20rem;
+  height: 4rem;
+}
+
+a i {
+  font-size: 3rem;
+}
+
+.navbar-twitch.open {
+  width: 240px;
+}
+.navbar-twitch > .container {
+  padding: 0px;
+  width: 100%;
+}
+.navbar-twitch .navbar-header,
+.navbar-twitch .navbar-brand {
+  float: none;
+  display: block;
+  width: 100%;
+  margin: 0px;
+}
+.navbar-twitch .navbar-brand {
+    height: 50px;   
+}
+.navbar-twitch > .container .navbar-brand {
+  padding: 0px;
+  margin: 0px;
+}
+.navbar-twitch > .container .navbar-brand > .small-nav {
+  display: block;
+}
+.navbar-twitch > .container .navbar-brand > .small-nav > span.logo, 
+.navbar-twitch.open > .container .navbar-brand > .full-nav {
+    display: block;
+  font-weight: bold;
+  padding: 15px 2px 15px 3px;
+  font-size: 18pt;
+}
+.navbar-twitch.open > .container .navbar-brand {
+  width: 100%;
+  padding: 15px 15px 60px;
+  text-align: center;
+}
+.navbar-twitch.navbar-inverse > .container .navbar-brand > .small-nav > span.logo {
+  /*color: rgb(255, 255, 255);*/
+}
+.navbar-twitch .navbar-nav > li {
+  float: none;
+}
+.navbar-twitch > .container .full-nav {
+  display: none;
+}
+.navbar-twitch.open > .container .full-nav {
+  display: block;
+}
+.navbar-twitch.open > .container .small-nav {
+  display: none;
+}
+.navbar-twitch .navbar-collapse {
+  padding: 0px;
+}
+.navbar-twitch .navbar-nav {
+  float: none;
+  margin: 0px;
+}
+.navbar-twitch .navbar-nav > li > a {
+  padding: 0px;
+}
+.navbar-twitch .navbar-nav > li > a > span {
+  display: block;
+  font-size: 16pt;
+  padding: 13px 15px 13px 12px;
+}
+.navbar-twitch .tooltip,
+.navbar-twitch .tooltip .tooltip-inner {
+  max-width: auto;
+  white-space:nowrap;
+}
+.navbar-twitch-toggle {
+  position: fixed;
+  top: 5px;
+  left: 55px;
+}
+.navbar-twitch ~ .navbar-twitch-toggle > .nav-open {
+  display: inline-block;
+}
+.navbar-twitch ~ .navbar-twitch-toggle > .nav-close {
+  display: none;
+}
+.navbar-twitch.open ~ .navbar-twitch-toggle {
+  left: 245px;
+}
+.navbar-twitch.open ~ .navbar-twitch-toggle > .nav-open {
+  display: none;
+}
+.navbar-twitch.open ~ .navbar-twitch-toggle > .nav-close {
+  display: inline-block;
+}
+
+
+.btn-purple,
+.btn-purple:hover,
+.btn-purple:focus,
+.btn-purple:Active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(86, 61, 124);
+    border-color: rgb(111, 84, 153);
+}
+.btn-purple:hover,
+.btn-purple:focus,
+.btn-purple:Active {
+    background-color: rgb(111, 84, 153);
+    border-color: rgb(86, 61, 124);   
+}
+
+
+.navbar-purple {
+    background-color: rgb(86, 61, 124);
+    border-color: rgb(111, 84, 153);
+}
+.navbar-purple .navbar-brand, 
+.navbar-purple .navbar-nav > li > a, 
+.navbar-purple .navbar-brand:hover, 
+.navbar-purple .navbar-nav > li > a:hover, 
+.navbar-purple .navbar-brand:focus, 
+.navbar-purple .navbar-nav > li > a:focus {
+    color: rgb(205, 191, 227);;
+}
+.navbar-purple .navbar-brand:hover, 
+.navbar-purple .navbar-nav > li > a:hover, 
+.navbar-purple .navbar-brand:focus, 
+.navbar-purple .navbar-nav > li > a:focus,
+.navbar-purple .navbar-nav > .active > a, 
+.navbar-purple .navbar-nav > .active > a:hover, 
+.navbar-purple .navbar-nav > .active > a:focus {
+    background-color: rgb(111, 84, 153);
+    color: rgb(255, 255, 255);
+}

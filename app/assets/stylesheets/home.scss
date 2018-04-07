@@ -1,7 +1,6 @@
 html {
   overflow: hidden;
   min-width: 1200px;
-  background: lightgrey;
   color: black;
   font-family: Helvetica;
 }
@@ -15,62 +14,37 @@ body {
   margin: 0;
   padding: 0;
   display: none;
+  background: black;
 }
 
-nav {
-  z-index: 9999;
-  position: absolute;
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-
-nav button {
-  height: 100%;
-}
-
-.nav-buttons {
-  display: grid;
-  height: 3rem;
-  width: 100%;
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.friend-search-results {
+#spade, #twenty-one {
   color: white;
-  display: none;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.7);
-  height: auto;
-  width: auto;
-  text-align: center;
-  border-radius: 0 0 0.5rem 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-nav ul {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  list-style: none;
-  width: 80%;
   text-align: center;
 }
 
-nav li {
-  display: inline;
-  font-size: 1.25rem;
+#btc {
+  margin-left: 0.3rem;
 }
 
-nav li:last-child {
-  margin-right: 1rem;
+#spade {
+  margin-left: 0.3rem;
+  font-size: 3.3rem;
+}
+
+#twenty-one {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 500;
+  margin-left: 0.1rem;
 }
 
 #search-field {
+  color: black;
   height: 3rem;
   width: 20rem;
   padding: 0;
   border: none;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-align: center;
 }
 
@@ -104,8 +78,8 @@ nav li:last-child {
   background-color: rgba(255, 255, 255, 0.3);
   color: black;
   text-align: center;
-  border-top: 1px dashed black;
-  border-bottom: 1px dashed black;
+  border-top: 0.3px solid grey;
+  border-bottom: 0.3px solid grey;
 }
 
 .username h2 {
@@ -113,9 +87,13 @@ nav li:last-child {
 }
 
 .body-wrap {
+  background-color: black;
+  width: 100%;
+  left: 5.3rem;
   position: absolute;
   top: 4rem;
-  background-color: #d4c1c1;
+  border-radius: 0.5rem;
+  background-color: white;
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 12rem 1fr;
@@ -152,8 +130,8 @@ nav li:last-child {
 }
 
 .play-area {
-  border-top: 1px dashed black;
-  border-bottom: 1px dashed black;
+  border-top: 0.2px solid grey;
+  border-bottom: 0.2px solid grey;
 }
 
 /*.message {
@@ -178,7 +156,6 @@ nav li:last-child {
   margin: 0 auto;
   grid-column-gap: 2rem;
   height: 75%;
-
 }
 
 .player-hand img,
@@ -203,14 +180,13 @@ nav li:last-child {
 }
 
 .footer-wrap {
-  z-index: 9995;
   position: absolute;
   display: grid;
-  grid-template-columns: 15% 25% 1fr;
-  bottom: 2rem;
-  height: 8rem;
+  grid-template-columns: 10rem 25% 1fr;
+  bottom: 0;
+  left: 5rem;
+  height: 13rem;
   width: 100%;
-  margin-bottom: 2rem;
 }
 
 .wager-buttons {
@@ -224,6 +200,7 @@ nav li:last-child {
 }
 
 .button-area-left {
+  color: black;
   display: grid;
   width: 100%;
   grid-template-rows: 1fr 1fr 1fr;
@@ -231,6 +208,7 @@ nav li:last-child {
 
 .button-area-left button {
   height: 100%;
+  color: black;
 }
 
 .play-again {
@@ -239,9 +217,9 @@ nav li:last-child {
 
 button,
 input[type="submit"] {
-  background-color: #d4c1c1;
+  background-color: lightgrey;
   width: 100%;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 300rem;
 }
 
@@ -268,8 +246,6 @@ button:hover {
 
 #wager {
   text-align: center;
-  border-top: 1px dashed black;
-  border-bottom: 1px dashed black;
   font-size: 1.2rem;
 }
 
