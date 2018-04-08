@@ -11,12 +11,11 @@
 }
 
 .navbar-inverse {
-   background: linear-gradient(80deg, red, maroon 70%) !important;
+   background: linear-gradient(80deg, rgba(0, 0, 0,0.5), rgba(255, 0, 0, 0.8), rgba(127, 0, 0, 0.8)) !important;
 }
 
 .navbar {
-  border-right: 4rem solid black;
-  box-shadow: 0px 0px 6px black;
+  box-shadow: 0px 0px 9px black;
 }
 
 .navbar li {
@@ -49,6 +48,10 @@ svg {
 }
 
 #btc {
+  margin-left: 0.45rem;
+}
+
+#spade {
   margin-left: 0.45rem;
 }
 

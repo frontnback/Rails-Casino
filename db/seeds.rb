@@ -1,22 +1,94 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-DECK = ['2', '3', '4', '5', '6', '7', '8', '9'] +
-       ['10', 'J', 'Q', 'K', 'A']
-
-SUITS = ['HEARTS', 'SPADES', 'CLUBS', 'DIAMONDS']
-cards = Array.new
-DECK.each do |card|
-  SUITS.each do |suit|
-    cards << "#{card} of #{suit}"
-  end 
-end
-
-cards.each do |card|
-  Card.create(name: card)
-end
+Card.create!([
+  {avatar_file_name: "j_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "J", suit: "CLUBS", value: 10, straight_id: 11},
+  {avatar_file_name: "4_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "4", suit: "CLUBS", value: 4, straight_id: 4},
+  {avatar_file_name: "4_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "4", suit: "DIAMONDS", value: 4, straight_id: 4},
+  {avatar_file_name: "5_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "5", suit: "HEARTS", value: 5, straight_id: 5},
+  {avatar_file_name: "2_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "2", suit: "HEARTS", value: 2, straight_id: 2},
+  {avatar_file_name: "5_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "5", suit: "DIAMONDS", value: 5, straight_id: 5},
+  {avatar_file_name: "2_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "2", suit: "DIAMONDS", value: 2, straight_id: 2},
+  {avatar_file_name: "2_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "2", suit: "SPADES", value: 2, straight_id: 2},
+  {avatar_file_name: "2_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "2", suit: "CLUBS", value: 2, straight_id: 2},
+  {avatar_file_name: "6_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "6", suit: "CLUBS", value: 6, straight_id: 6},
+  {avatar_file_name: "10_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "10", suit: "CLUBS", value: 10, straight_id: 10},
+  {avatar_file_name: "6_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "6", suit: "DIAMONDS", value: 6, straight_id: 6},
+  {avatar_file_name: "7_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "7", suit: "HEARTS", value: 7, straight_id: 7},
+  {avatar_file_name: "7_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "7", suit: "SPADES", value: 7, straight_id: 7},
+  {avatar_file_name: "7_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "7", suit: "CLUBS", value: 7, straight_id: 7},
+  {avatar_file_name: "7_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "7", suit: "DIAMONDS", value: 7, straight_id: 7},
+  {avatar_file_name: "8_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "8", suit: "HEARTS", value: 8, straight_id: 8},
+  {avatar_file_name: "8_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "8", suit: "CLUBS", value: 8, straight_id: 8},
+  {avatar_file_name: "q_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "Q", suit: "CLUBS", value: 10, straight_id: 12},
+  {avatar_file_name: "q_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "Q", suit: "HEARTS", value: 10, straight_id: 12},
+  {avatar_file_name: "q_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "Q", suit: "SPADES", value: 10, straight_id: 12},
+  {avatar_file_name: "q_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "Q", suit: "DIAMONDS", value: 10, straight_id: 12},
+  {avatar_file_name: "k_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "K", suit: "HEARTS", value: 10, straight_id: 13},
+  {avatar_file_name: "k_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "K", suit: "SPADES", value: 10, straight_id: 13},
+  {avatar_file_name: "8_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "8", suit: "SPADES", value: 8, straight_id: 8},
+  {avatar_file_name: "8_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "8", suit: "DIAMONDS", value: 8, straight_id: 8},
+  {avatar_file_name: "9_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "9", suit: "HEARTS", value: 9, straight_id: 9},
+  {avatar_file_name: "9_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "9", suit: "SPADES", value: 9, straight_id: 9},
+  {avatar_file_name: "9_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "9", suit: "CLUBS", value: 9, straight_id: 9},
+  {avatar_file_name: "9_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "9", suit: "DIAMONDS", value: 9, straight_id: 9},
+  {avatar_file_name: "10_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "10", suit: "HEARTS", value: 10, straight_id: 10},
+  {avatar_file_name: "10_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "10", suit: "SPADES", value: 10, straight_id: 10},
+  {avatar_file_name: "10_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "10", suit: "DIAMONDS", value: 10, straight_id: 10},
+  {avatar_file_name: "6_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "6", suit: "HEARTS", value: 6, straight_id: 6},
+  {avatar_file_name: "6_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "6", suit: "SPADES", value: 6, straight_id: 6},
+  {avatar_file_name: "5_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "5", suit: "SPADES", value: 5, straight_id: 5},
+  {avatar_file_name: "5_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "5", suit: "CLUBS", value: 5, straight_id: 5},
+  {avatar_file_name: "3_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "3", suit: "HEARTS", value: 3, straight_id: 3},
+  {avatar_file_name: "3_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "3", suit: "SPADES", value: 3, straight_id: 3},
+  {avatar_file_name: "4_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "4", suit: "HEARTS", value: 4, straight_id: 4},
+  {avatar_file_name: "4_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "4", suit: "SPADES", value: 4, straight_id: 4},
+  {avatar_file_name: "k_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "K", suit: "CLUBS", value: 10, straight_id: 13},
+  {avatar_file_name: "k_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "K", suit: "DIAMONDS", value: 10, straight_id: 13},
+  {avatar_file_name: "a_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "A", suit: "CLUBS", value: 11, straight_id: 14},
+  {avatar_file_name: "3_of_clubs.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "3", suit: "CLUBS", value: 3, straight_id: 3},
+  {avatar_file_name: "3_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "3", suit: "DIAMONDS", value: 3, straight_id: 3},
+  {avatar_file_name: "j_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "J", suit: "DIAMONDS", value: 10, straight_id: 11},
+  {avatar_file_name: "j_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "J", suit: "HEARTS", value: 10, straight_id: 11},
+  {avatar_file_name: "a_of_diamonds.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "A", suit: "DIAMONDS", value: 11, straight_id: 14},
+  {avatar_file_name: "a_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "A", suit: "SPADES", value: 11, straight_id: 14},
+  {avatar_file_name: "a_of_hearts.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "A", suit: "HEARTS", value: 11, straight_id: 14},
+  {avatar_file_name: "j_of_spades.png", avatar_content_type: nil, avatar_file_size: nil, avatar_updated_at: nil, rank: "J", suit: "SPADES", value: 10, straight_id: 11}
+])
+FriendRequest.create!([
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 31, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 32, requested_id: 31, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false},
+  {sender_id: 32, requested_id: 31, accepted: false},
+  {sender_id: 31, requested_id: 32, accepted: false}
+])
+Message.create!([
+  {content: "Wow this game is very fun right now\n", user_id: 31},
+  {content: "Walk it like I talk it", user_id: 32},
+  {content: "Hannah montana", user_id: 31},
+  {content: "hey", user_id: 31},
+  {content: "what up", user_id: 31},
+  {content: "hiu", user_id: 31},
+  {content: "what\n", user_id: 31}
+])
+User.create!([
+  {username: "edmlounge", email: "edmlounge@gmail.com", password_digest: "$2a$10$VdgrKTKmRhj9.1wBoM8fneEXaDoswnvTtKkvi2CxFcHs81BOvs2JS", balance: 379013, email_confirmed: true, confirm_token: nil, channel_key: nil, online: true, remember_digest: "$2a$10$.AynpOOAVNAJZ54vtsaSd.Z4ufRSPb2ghUn1r1mpxdeUp2Q8UqFL2"},
+  {username: "cora123", email: "cora@gmail.com", password_digest: "$2a$10$7vh6z/95uw1vNHQnqWmav.93GkL3DjBWZpPNO1Cub0NrwVyASa3za", balance: 5998, email_confirmed: nil, confirm_token: "MQuYOJaMHTFItJALw1vC1A", channel_key: nil, online: true, remember_digest: "$2a$10$ep7Yq11nqbppuR49tlxRBeNAjSr4LJhwD4ltZHcyPaBUQhzfnOhx."},
+  {username: "eddiealex", email: "aol@aim.com", password_digest: "$2a$10$Wm6/n/OEKZwo8Xry2alvW.MMyDh1L6gdTm0FftYw5PCKkAyMrgwAG", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "valerie123", email: "v@vai.com", password_digest: "$2a$10$xiLyHIpWn.E3eLIOkqOa7OPJNBY5Rm9HnUnafbI74.TItJzEbd7JK", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "ally123", email: "a@aim.com", password_digest: "$2a$10$cwbTnRhSj2Tzetuc.Wgx7uXGQmOLyG0q7UWzwDpnYpuQ8wb1u30Ga", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "poopy123", email: "poop@poop.com", password_digest: "$2a$10$b/V6DwmPPrX1VJZ6l6Qc1OIgYUdYc2rwphWbcv//WqbzwtQfmJRvm", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "aaa123", email: "aa@aa.com", password_digest: "$2a$10$MpMbfNMBVslAHZxFMfGrau9wXpdbbDkon4MvMggImnWcKlg.V3amK", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "gouge", email: "eaf353@nyu.edu", password_digest: "$2a$10$7DIB0i1K78T86Y200yuRcuJTzWIiiLQsx7r2qc1z176zVuX9joGD2", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "phant0mnyc", email: "aim@aol.com", password_digest: "$2a$10$wuOmQ2Km03FW.y9tkNi6.eoLXHf75rkVUcufpdbroNPU0NA8ebdO.", balance: nil, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "eaf353", email: "gogiisthebest@gmail.com", password_digest: "$2a$10$Nv9jA5ozMkWYpB9pbqgCKucjM2IEdL5BsYoB0WE1lncJhsVUEkjYW", balance: 10000, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil},
+  {username: "abc123", email: "kathypacific@cox.net", password_digest: "$2a$10$3GCGojRW2/nMbiAG70ShOuHtkigAJhORxvFTcNK3VrQAHdmPo..EK", balance: 60001, email_confirmed: nil, confirm_token: nil, channel_key: nil, online: false, remember_digest: nil}
+])
