@@ -223,10 +223,12 @@ body {
 
 .footer-wrap {
   position: absolute;
+  border-top: 1px solid black;
+  box-shadow: 9px 9px 9px 9px black;
   display: grid;
   grid-template-columns: 10rem 25% 1fr;
   bottom: 0;
-  left: 5rem;
+  left: 5.3rem;
   height: 13rem;
   width: 100%;
 }
@@ -280,7 +282,7 @@ button:hover {
 }
 
 .result {
-  background: linear-gradient(80deg, rgba(0, 0, 0,0.3), rgba(255, 0, 0, 0.6), rgba(127, 0, 0, 0.6));
+  background: linear-gradient(80deg, rgba(255, 0, 0, 0.6), rgba(127, 0, 0, 0.6));
   width: 100%;
   position: relative;
 }
@@ -296,9 +298,15 @@ button:hover {
 }
 
 #wager {
+  border-left: 1px solid white;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  width: 40rem;
+  margin: 0 auto;
   color: white;
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .wager-buttons input[type='submit'] {
