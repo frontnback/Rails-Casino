@@ -13,6 +13,5 @@ App.notifications = App.cable.subscriptions.create("NotificationsChannel", {
    $('#friends').fadeTo('slow', 0.3, function(){
     $(this).css('background-color', 'red');
    }).fadeTo('slow', 1);
-   
   }
 });

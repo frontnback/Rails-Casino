@@ -1,3 +1,33 @@
 // Place all the styles related to the PrivateMessage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.chat-area {
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 0.2rem;
+  width: 60rem;
+  overflow: scroll;
+}
+
+.new-pvt-msg {
+  height: 50rem;
+  position: absolute;
+  margin-left: 68rem;
+  margin-top: -4.8rem;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 30rem;
+  min-height: 20rem;
+  max-height: 60rem;
+  overflow: scroll;
+}
+
+#private_message_message {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  color: black;
+  font-size: 1.3rem;
+  resize: none;
+  border: none;
+}

@@ -1,0 +1,8 @@
+<% if @messages %>
+  <% @messages.each do |message| %>
+    <%= message.user_id %> says:
+    <div class="message-content">
+      <%= message.message %>
+    </div>
+  <% end %>
+<% end %>

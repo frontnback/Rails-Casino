@@ -5,6 +5,5 @@ class NotificationsChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
   end
 end

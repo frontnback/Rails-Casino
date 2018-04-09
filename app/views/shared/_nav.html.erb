@@ -13,7 +13,7 @@
             <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Home"> 
             <i class="fas fa-home"></i>
             </span>
-            <span class="full-nav"> Home </span>
+            <span class="full-nav">Home</span>
           </a>
         </li>
          <li>
@@ -30,6 +30,9 @@
               <span id="spade">♠</span>
             </span>
             <span class="full-nav">Hold Em Poker</span>
+            <div class="poker-invite">
+               <%= render 'invitation/index' %>
+            </div>
           </a>
         </li>
         <li>
@@ -40,9 +43,8 @@
             <span class="full-nav">Blackjack</span>
           </a>
         </li>
-        <li id="friends">
+        <li>
           <%= link_to friends_path, remote: true, method: :get do %>
-         <!--  <a id="friends-btn"> -->
               <span class="small-nav" data-toggle="tooltip" data-placement="right" title="My Friends"> 
                 <i class="fas fa-users"></i>
               </span>
@@ -53,15 +55,17 @@
           <% end %>
         </li>
         <li>
-          <a href="#private-chat">
+          <%= link_to pvt_msg_path, remote: true, method: :get do %>
             <span class="small-nav" data-toggle="tooltip" data-placement="right" title="Private Message"> 
               <i class="far fa-comments"></i>
             </span>
             <span class="full-nav">Private Chat</span>
-          </a>
-          <div class="chat-area">
-            <input class="mytext" placeholder="Type a message"/>
-          </div>       
+            <div class="chat-area">
+            </div>
+            <div class="new-pvt-msg">
+              <%= render 'private_messages/new' %>
+            </div>     
+          <% end %>  
         </li>
         <li id ="mag-glass">
           <a href="#search">

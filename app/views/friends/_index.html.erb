@@ -5,7 +5,7 @@
     <div id="friend"><span id="friend-username"><%= friend.username %></span>
       <% if friend.online %>
         <span id="friend-online"> is online! </span>
-        <%= link_to root_path, remote: true, method: :get do %>
+        <%= link_to game_invite_path(friend_id: User.find(friend.id)), remote: true, method: :post do %>
           <button>Play Me</button>
         <% end %>
       <% end %>

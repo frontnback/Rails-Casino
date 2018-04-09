@@ -29,6 +29,35 @@ body {
   height: auto;
 }
 
+.poker-invite {
+  border: 1px solid black;
+  display: none;
+  position: absolute;
+  margin-left: 6rem;
+  margin-top: -4.8rem;
+  height: 20rem;
+  width: 30rem;
+  z-index: 99999;
+  background: linear-gradient(20deg, rgba(255,200,55, 0.76), orange);
+  border-radius: 0.3rem;
+  color: white;
+  text-align: center;
+}
+
+.poker-invite div {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  font-size: 1.4rem;
+  width: 80%;
+  transform: translate(-50%, -50%);
+}
+
+.poker-invite button { 
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem;
+}
+
 .chat-area {
   display: none;
   position: absolute;
@@ -282,7 +311,7 @@ button:hover {
 }
 
 .result {
-  background: linear-gradient(80deg, rgba(255, 0, 0, 0.6), rgba(127, 0, 0, 0.6));
+  background: linear-gradient(80deg, rgba(255, 0, 0, 0.7), rgba(127, 0, 0, 0.7));
   width: 100%;
   position: relative;
 }

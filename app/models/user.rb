@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, on: :create
   has_many :messages
+  has_many :private_messages
   has_many :friend_requests, dependent: :destroy
   has_and_belongs_to_many :friendships,
     class_name: 'User',

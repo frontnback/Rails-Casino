@@ -7,8 +7,6 @@ class FriendRequestsController < ApplicationController
     if @friend_request.save
       ActionCable.server.broadcast "notifications_channel_#{requestee.id}",
                                     content: current_user.username
-      # ActionCable.server.broadcast "notifications_channel_#{requestee.id}",
-      #   message: "#{requestee.username} has sent you a friend request!"
     end
   end
 

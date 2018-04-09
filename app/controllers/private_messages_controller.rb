@@ -1,10 +1,14 @@
-class PrivateMessageController < ApplicationController
+class PrivateMessagesController < ApplicationController
   def index
     @messages = PrivateMessage.where(recipient_id: current_user.id)
+    @message = PrivateMessage.new
+  end
+
+  def new
   end
 
   def create
-    message = 
+    message = current_user.message.build(message_params)
   end
 
   def view
@@ -13,6 +17,6 @@ class PrivateMessageController < ApplicationController
 
   private 
     def message_params
-      params.require(:message).permit(:content)
+      params.require(:message).permit(:message)
     end
 end

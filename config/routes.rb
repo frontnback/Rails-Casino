@@ -14,9 +14,12 @@ Rails.application.routes.draw do
   get '/search' => 'search#index'
   get '/friends' => 'friends#index'
   get '/friends/destroy'
+  get '/pvt-msg' => 'private_messages#index'
+  get '/new-pvt-msg' => 'private_messages#new'
 
   post '/register' => 'users#create'
   post '/login' => 'sessions#create'
+  post '/game-invite' => 'invitation#transmit'
   post 'home/wager' => 'home#wager'
   post '/friends/request' => 'friends#request'
   post '/accept-req' => 'friend_requests#accept'
