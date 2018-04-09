@@ -10,9 +10,6 @@ class PokerController < ApplicationController
 
   def show
   end
-  # def index
-  #   $game.push(Game.new(params[:starting_players]))
-  # end
 
   def get_messages 
     @messages = Message.for_display 
