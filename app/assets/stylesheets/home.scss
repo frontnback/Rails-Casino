@@ -17,6 +17,10 @@ body {
   background: black;
 }
 
+.play-area, .footer-wrap {
+  min-width: 1200px;
+}
+
 #pending-req {
   text-align: center;
   width: 100%; 
@@ -80,6 +84,7 @@ body {
 }
 
 .search-results {
+  border: 1px solid black;
   color: white;
   display: none;
   z-index: 9999;
@@ -87,11 +92,16 @@ body {
   left: 6rem;
   top: 4rem;
   background: linear-gradient(20deg, rgba(255,200,55, 0.65), orange);
-  height: auto;
+  max-height: 30rem;
+  overflow: scroll;
   width: 20rem;
   text-align: center;
   border-radius: 0 0 0.5rem 0.5rem;
-  padding-bottom: 0.5rem;
+}
+
+.user-search-result {
+  border: 1px solid white;
+  padding-bottom: 2rem;
 }
 
 .search-results button {
