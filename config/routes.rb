@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   post 'home/wager' => 'home#wager'
   post '/friends/request' => 'friends#request'
+  post '/accept-req' => 'friend_requests#accept'
 
   delete '/logout' => 'sessions#destroy'
 

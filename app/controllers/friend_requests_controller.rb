@@ -16,9 +16,14 @@ class FriendRequestsController < ApplicationController
     @incoming = FriendRequest.where(requested_id: current_user)
   end
 
+  def accept
+    Friendship.create(user_id: params[:id], friend_user_id: params[:friend])
+    FriendRequest.find(params[:request_id]).destroy
+  end
+
   # private
 
-  # def set_friend_request
-  #   @friend_request = FriendRequest.find(params[:id])
-  # end
+  #   def set_friend_request
+  #     @friend_request = FriendRequest.find(params[:id])
+  #   end
 end

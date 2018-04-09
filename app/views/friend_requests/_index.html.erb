@@ -1,0 +1,8 @@
+<% if @incoming %>
+  <% @incoming.each do |request| %>
+    <div id="pending-req">
+      <%= User.find(request.sender_id).username %> wants to be friends! 
+      <%= link_to 'Accept', accept_req_path(id: request.sender_id, friend: request.requested_id, request_id: request.id), remote: true, method: :post %>
+    </div>
+  <% end %>
+<% end %>

@@ -41,15 +41,16 @@
           </a>
         </li>
         <li id="friends">
-          <a href="#my-friends">
-            <span class="small-nav" data-toggle="tooltip" data-placement="right" title="My Friends"> 
-              <i class="fas fa-users"></i>
-            </span>
-            <span class="full-nav">My Friends</span>
-          </a>
-          <div class="incoming-friend-request">
-            <span id="friend-request-user"></span> sent you a friend request!
-          </div>
+          <%= link_to friends_path, remote: true, method: :get do %>
+         <!--  <a id="friends-btn"> -->
+              <span class="small-nav" data-toggle="tooltip" data-placement="right" title="My Friends"> 
+                <i class="fas fa-users"></i>
+              </span>
+              <span class="full-nav">My Friends</span>
+       <!--    </a> -->
+              <div class="friends-list">
+              </div>
+          <% end %>
         </li>
         <li>
           <a href="#private-chat">

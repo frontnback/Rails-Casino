@@ -21,4 +21,7 @@ $( document ).on('turbolinks:load', function() {
       $('.search-results').css('display', 'none');
     }
   });
+  $('#friends-btn').click( function() {
+    $('.friends-list').fadeIn();
+  });
 });

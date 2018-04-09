@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   respond_to :html, :js
 
   def index
+    @incoming = FriendRequest.where(requested_id: current_user)
     $game = Game.new
     $wager = 1
     display_hands

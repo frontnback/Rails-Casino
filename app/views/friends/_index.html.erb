@@ -1,3 +1,7 @@
-<% @friendships.each do |friend| %>
-  <%= User.find_by(id: friend.friend_user_id).username %>
+<%= render 'friend_requests/index' %>
+
+<% if @friendships %>
+  <% @friendships.each do |friend| %>
+    <div id="friend"><%= User.find(friend.friend_user_id) %></div>
+  <% end %>
 <% end %>
