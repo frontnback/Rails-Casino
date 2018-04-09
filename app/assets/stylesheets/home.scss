@@ -25,16 +25,6 @@ body {
   height: auto;
 }
 
-.friends-list {
-  display: none;
-  position: absolute;
-  margin-left: 5.5rem;
-  margin-top: -4.8rem;
-  width: 30rem;
-  height: 30rem;
-  background: black;
-}
-
 .chat-area {
   display: none;
   position: absolute;
@@ -44,25 +34,6 @@ body {
   height: 50rem;
   width: 30rem;
   z-index: 9999;
-}
-
-.incoming-friend-request{
-  display: none;
-  color: white;
-  font-weight: 500;
-  text-align: center;
-  width: 16rem;
-  height: 4.7rem;
-  background:rgba(255, 0, 0, 0.8);
-  margin-left: 5.5rem;
-  margin-top: -4.9rem;
-  z-index: 9999;
-  border-radius: 0.3rem;
-}
-
-#friend-request-user {
-  font-weight: 600;
-  color: black;
 }
 
 .mytext {
@@ -115,7 +86,7 @@ body {
   position: absolute;
   left: 6rem;
   top: 4rem;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(20deg, rgba(255,200,55, 0.65), orange);
   height: auto;
   width: 20rem;
   text-align: center;

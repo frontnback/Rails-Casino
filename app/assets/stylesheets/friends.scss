@@ -1,3 +1,62 @@
 // Place all the styles related to the Friends controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#friend-online {
+  font-style: italic;
+}
+
+#friend-username {
+  font-size: 1.85rem;
+  font-weight: 600;
+}
+
+#friend {
+  width: 100%;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid white;
+  box-shadow: 0 0 3px 0 black;
+  text-align: center;
+  font-size: 1.7rem;
+  color: black;
+}
+
+#friend button {
+  margin-left: 1rem;
+  width: auto;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid black;
+  color: black;
+}
+
+.friends-list {
+  display: none;
+  border-radius: 0.3rem;
+  position: absolute;
+  margin-left: 5.5rem;
+  margin-top: -4.8rem;
+  width: 50rem;
+  height: 20rem;
+  overflow: scroll;
+  background: linear-gradient(20deg, rgba(255,200,55, 0.72), orange);
+}
+
+.incoming-friend-request{
+  display: none;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+  width: 16rem;
+  height: 4.7rem;
+  background:rgba(255, 0, 0, 0.8);
+  margin-left: 5.5rem;
+  margin-top: -4.9rem;
+  z-index: 9999;
+  border-radius: 0.3rem;
+}
+
+#friend-request-user {
+  font-weight: 600;
+  color: black;
+}

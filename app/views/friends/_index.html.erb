@@ -1,7 +1,17 @@
 <%= render 'friend_requests/index' %>
 
-<% if @friendships %>
-  <% @friendships.each do |friend| %>
-    <div id="friend"><%= User.find(friend.friend_user_id) %></div>
+<% if @friends %>
+  <% @friends.each do |friend| %>
+    <div id="friend"><span id="friend-username"><%= friend.username %></span>
+      <% if friend.online %>
+        <span id="friend-online"> is online! </span>
+        <%= link_to root_path, remote: true, method: :get do %>
+          <button>Play Me</button>
+        <% end %>
+      <% end %>
+        <%= link_to root_path, remote: true, method: :get do %>
+          <button>Message</button>
+        <% end %>
+    </div>
   <% end %>
 <% end %>
