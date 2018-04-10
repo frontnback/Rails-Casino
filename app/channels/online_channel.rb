@@ -5,6 +5,6 @@ class OnlineChannel < ApplicationCable::Channel
   end
 
   def unsubscribed
-    # Any cleanup needed when channel is unsubscribed
+    current_user.is_offline
   end
 end

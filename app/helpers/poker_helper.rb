@@ -3,7 +3,7 @@ module PokerHelper
   attr_reader :hand
 
   def initialize
-    @hand = [random_card, random_card]
+    @hand = []
   end
 
   def evaluate
@@ -80,14 +80,14 @@ module PokerHelper
 
     private
 
-      def random_card
-        idx = rand(52) + 1
-        if !$indices.include?(idx)
-          $indices << idx
-          Card.find(idx)
-        else 
-          random_card
-        end
-      end
+      # def random_card
+      #   idx = rand(52) + 1
+      #   if !$indices.include?(idx)
+      #     $indices << idx
+      #     Card.find(idx)
+      #   else 
+      #     random_card
+      #   end
+      # end
 end
 end
