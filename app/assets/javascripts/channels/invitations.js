@@ -9,8 +9,13 @@ App.invitations = App.cable.subscriptions.create("InvitationsChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    $('#invite-username').append(data.inviter);
-    $('.poker-invite').fadeIn();
+    if (data.inviter !== undefined) {
+      $('#invite-username').append(data.inviter);
+      $('.poker-invite').fadeIn();
+    } else if (data.url !== undefined) {
+      window.location.href = `localhost:3000${data.url}`
+      console.log(data.url);
+    }
   }
 });
  

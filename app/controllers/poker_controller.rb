@@ -4,8 +4,12 @@ class PokerController < ApplicationController
 
   def create
     players = params[:starting_players]
+    other_player = players.first
     idx = $games.size
     $games.push(Game.new)
+    url = poker_path(game_id: idx)
+    ActionCable.server.broadcast "invitations_channel_#{other_player}",
+                                  url: url
     redirect_to poker_path(game_id: idx)
   end
 
@@ -38,22 +42,9 @@ class Game
 
   def initialize
     @lobby = []
-    @deck = []
-    Card.all.each { |card| @deck << card }
+    @deck = Card.all.to_a
     @deck.shuffle!
     @flop = @deck.pop(5)
     @winner = nil
   end
-
-  private
-
-  # def random_card
-  #   idx = rand(52) + 1
-  #   if !$indices.include?(idx)
-  #     $indices << idx
-  #     Card.find(idx)
-  #   else 
-  #     random_card
-  #   end
-  # end
 end
