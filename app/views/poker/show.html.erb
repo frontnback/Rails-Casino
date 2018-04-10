@@ -3,18 +3,20 @@
 <div class="poker-table">
   <div class="flop">
     <% if @flop %>
-      <% @flop.each do |c| %>
+      <% @flop[0..2].each do |c| %>
         <%= image_tag c.avatar_file_name %>
       <% end %>
     <% end %>
   </div>
   <% if @lobby %>
     <% @lobby.each do |p| %>
-      <div class="poker-hand">
-        <% p.hand.hand.each do |c| %>
-          <%= image_tag c.avatar_file_name %>
-        <% end %>
-      </div>
+      <% if current_user.id == p.user_id %>
+        <div class="poker-hand">
+          <% p.hand.hand.each do |c| %>
+            <%= image_tag c.avatar_file_name %>
+          <% end %>
+        </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>

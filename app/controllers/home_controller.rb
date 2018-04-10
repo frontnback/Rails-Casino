@@ -67,13 +67,13 @@ class HomeController < ApplicationController
   end
 end 
 
-class Game
+class BlackjackGame
   attr_accessor :human, :dealer
   attr_reader :winner
 
   def initialize
-    $human = Player.new('You')
-    $dealer = Player.new('Dealer')
+    $human = BlackjackPlayer.new('You')
+    $dealer = BlackjackPlayer.new('Dealer')
     @winner = nil
   end
 
@@ -153,7 +153,7 @@ class Game
   end
 end
 
-class Player
+class BlackjackPlayer
   attr_accessor :hand, :hand_value
   attr_reader :name
 
