@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   post 'home/wager' => 'home#wager'
   post '/friends/request' => 'friends#request'
   post '/accept-req' => 'friend_requests#accept'
+  post '/bet' => 'poker#bet'
 
   delete '/logout' => 'sessions#destroy'
 

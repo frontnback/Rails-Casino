@@ -24,12 +24,19 @@ class PokerController < ApplicationController
     round = $games[params[:round].to_i]
     @flop = round.flop
     @lobby = round.lobby
-    @current_user_hand = @lobby.select { |p| p.user_id == current_user.id }[0].hand
+    @current_user_hand = round.current_player(current_user.id).hand
   end
 
+  # def call
+  #   current_player.current_bet = current_game.round.pot
+  # end
+
   def bet
-    @lobby.select { |p| p.user_id == current_user.id }.first.player.current_bet = params[:bet]
+    current_round.current_player(current_user.id).current_bet = params[:bet]
   end
+
+  # def fold
+  # end
 
   def get_messages 
     @messages = Message.for_display 
@@ -39,6 +46,15 @@ class PokerController < ApplicationController
   private
     def current_game
       $games[current_user.current_game]
+    end
+
+    def current_room
+      current_user.current_room
+    end
+
+    def current_round
+      id = PokerRoom.find(current_room).current_round
+      $games[id]
     end
 end
 
@@ -50,15 +66,17 @@ class PokerPlayer
     @name = name
     @hand = PokerHand.new(hand)
     @user_id = user_id
-    @current_bet = 1
+    @current_bet = 0
+    @round_bet = 0
   end  
 end
 
 class PokerGame
   attr_accessor :human, :dealer
-  attr_reader :winner, :flop, :lobby, :round
+  attr_reader :winner, :flop, :lobby, :round, :big_blind
 
   def initialize(players, room)
+    @big_blind = 100
     @deck = Card.all.to_a
     @deck.shuffle!
     @flop = @deck.pop(5)
@@ -67,8 +85,25 @@ class PokerGame
     @round = PokerRound.new(player1: players[0], player2: players[1], poker_room_id: room)
     if @round.save 
       $games[@round.id] = self
+      PokerRoom.find(room).update!(current_round: @round.id)
     end
   end
+
+  def current_player(current_user_id)
+    self.lobby.select { |player| player.user_id == current_user_id }.first
+  end
+
+  # def first_round
+  # end
+
+  # def second_round
+  # end
+
+  # def third_round
+  # end 
+
+  # def fourth_round
+  # end
 end
   
 class PokerHand
