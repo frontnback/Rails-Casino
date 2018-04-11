@@ -3,11 +3,13 @@ class InvitationController < ApplicationController
   end
 
   def transmit
-    invitation = Invitation.new(sender_id: current_user.id, recipient_id: params[:friend_id])
-    if invitation.save
+    @invitation = Invitation.new(sender_id: current_user.id, recipient_id: params[:friend_id])
+    if @invitation.save
       ActionCable.server.broadcast "invitations_channel_#{params[:friend_id]}",
-                                    inviter: current_user.username
+                                    invitation: @invitation,
+                                    inviter: User.find(@invitation.sender_id).username
+
+      return @invitation                            
     end
-    @invitation = [invitation.sender_id, invitation.recipient_id]
   end
 end

@@ -1,0 +1,2 @@
+class PokerRoom < ApplicationRecord
+end

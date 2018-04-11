@@ -9,8 +9,13 @@ App.invitations = App.cable.subscriptions.create("InvitationsChannel", {
 
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
-    if (data.inviter !== undefined) {
+    if (data.invitation !== undefined) {
+      console.log('running!!');
       $('#invite-username').append(data.inviter);
+      let num = data.invitation.id;
+      $('#invite-url').attr('href', function(i, href) {
+        return href + num;
+      });
       $('.poker-invite').fadeIn();
     } else if (data.url !== undefined) {
       window.location.href = `localhost:3000${data.url}`

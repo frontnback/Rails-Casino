@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180410023430) do
+ActiveRecord::Schema.define(version: 20180411010157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,36 @@ ActiveRecord::Schema.define(version: 20180410023430) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "poker_rooms", force: :cascade do |t|
+    t.integer "player_count"
+    t.integer "player1"
+    t.integer "player2"
+    t.integer "player3"
+    t.integer "player4"
+    t.integer "player5"
+    t.integer "player6"
+    t.integer "player7"
+    t.integer "player8"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "poker_rounds", force: :cascade do |t|
+    t.integer "player1"
+    t.integer "player2"
+    t.integer "player3"
+    t.integer "player4"
+    t.integer "player5"
+    t.integer "player6"
+    t.integer "player7"
+    t.integer "player8"
+    t.integer "pot"
+    t.integer "winner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "poker_room_id"
+  end
+
   create_table "private_messages", force: :cascade do |t|
     t.integer "sender_id"
     t.integer "recipient_id"
@@ -86,7 +116,7 @@ ActiveRecord::Schema.define(version: 20180410023430) do
     t.string "channel_key"
     t.boolean "online"
     t.string "remember_digest"
-    t.integer "current_game"
+    t.integer "current_room"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
