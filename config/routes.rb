@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/users/leaderboard' => 'users#leaderboard'
   get '/users/online' => 'users#online'
   get '/poker' => 'poker#show'
+  get '/flop' => 'poker#flop'
   get '/new-game' => 'poker#create'
   get '/search' => 'search#index'
   get '/friends' => 'friends#index'
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
   post '/friends/request' => 'friends#request'
   post '/accept-req' => 'friend_requests#accept'
   post '/bet' => 'poker#bet'
+  post '/call' => 'poker#call'
 
   delete '/logout' => 'sessions#destroy'
 

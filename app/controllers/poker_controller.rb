@@ -24,7 +24,12 @@ class PokerController < ApplicationController
     round = $games[params[:round].to_i]
     @flop = round.flop
     @lobby = round.lobby
-    @current_user_hand = round.current_player(current_user.id).hand
+    @lobby[0].turn = true
+    @current_user = round.current_player(current_user.id)
+    @current_user_turn = @current_user.turn
+    @current_user_hand = @current_user.hand
+    # ActionCable.server.broadcast "room_channel_#{current_room}_#{current_id}",
+    #                               turn: current_round.current_player(current_user.id).turn
   end
 
   # def call
@@ -32,11 +37,31 @@ class PokerController < ApplicationController
   # end
 
   def bet
-    current_round.current_player(current_user.id).current_bet = params[:bet]
+    player = current_round.current_player(current_user.id)
+    current_id = current_user.id
+    if player.turn
+      if params[:bet]
+        player.current_bet += params[:bet].to_i
+      else 
+        player.turn = false
+        current_round.next_turn
+        next_id = current_round.current_players_user_id
+        ActionCable.server.broadcast "room_channel_#{current_room}_#{next_id}",
+                                      turn: true
+        ActionCable.server.broadcast "room_channel_#{current_room}_#{current_id}",
+                                      not_turn: true
+      end
+    end
   end
 
-  # def fold
-  # end
+  def flop
+    @flop = current_round.flop
+  end
+
+  def call
+    ActionCable.server.broadcast "room_channel_#{current_room}",
+                                  call: true
+  end
 
   def get_messages 
     @messages = Message.for_display 
@@ -45,7 +70,7 @@ class PokerController < ApplicationController
 
   private
     def current_game
-      $games[current_user.current_game]
+      $games[current_user.current_room]
     end
 
     def current_room
@@ -56,10 +81,14 @@ class PokerController < ApplicationController
       id = PokerRoom.find(current_room).current_round
       $games[id]
     end
+
+    def player_bet
+      current_round.current_player(current_user.id).current_bet
+    end
 end
 
 class PokerPlayer
-  attr_accessor :hand, :hand_value, :current_bet
+  attr_accessor :hand, :hand_value, :current_bet, :turn
   attr_reader :name, :user_id
 
   def initialize(user_id, hand)
@@ -68,19 +97,22 @@ class PokerPlayer
     @user_id = user_id
     @current_bet = 0
     @round_bet = 0
+    @turn = false
   end  
 end
 
 class PokerGame
-  attr_accessor :human, :dealer
+  attr_accessor :human, :dealer, :turn_marker
   attr_reader :winner, :flop, :lobby, :round, :big_blind
 
   def initialize(players, room)
     @big_blind = 100
+    @betting_round = 1
     @deck = Card.all.to_a
     @deck.shuffle!
     @flop = @deck.pop(5)
     @lobby = [PokerPlayer.new(players[0],@deck.pop(2)), PokerPlayer.new(players[1],@deck.pop(2))]
+    @turn_marker = 0
     @winner = nil
     @round = PokerRound.new(player1: players[0], player2: players[1], poker_room_id: room)
     if @round.save 
@@ -90,20 +122,22 @@ class PokerGame
   end
 
   def current_player(current_user_id)
-    self.lobby.select { |player| player.user_id == current_user_id }.first
+    @lobby.select { |player| player.user_id == current_user_id }.first
   end
 
-  # def first_round
-  # end
+  def current_players_user_id
+    @lobby[@turn_marker].user_id
+  end
 
-  # def second_round
-  # end
-
-  # def third_round
-  # end 
-
-  # def fourth_round
-  # end
+  def next_turn
+    last_idx = @lobby.length - 1
+    if (@turn_marker + 1) > last_idx
+      @turn_marker = 0
+    else
+      @turn_marker += 1
+    end
+    @lobby[@turn_marker].turn = true
+  end 
 end
   
 class PokerHand
